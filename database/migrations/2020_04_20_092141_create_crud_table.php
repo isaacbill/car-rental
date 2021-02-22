@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateCrudTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('crud', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('vehicle_title');
+            $table->string('vehicle_brand');
+            $table->string('model_year');
+            $table->string('fuel_type');
+            $table->string('priceperday');
+            $table->string('seating_capacity');
+            $table->string('image');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('crud');
+    }
+}
